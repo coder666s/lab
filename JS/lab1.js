@@ -49,7 +49,35 @@ b = 3;
 p = (a*2)+(b*2);
 s = 2*3;
 soot = p/s;
-console.log (a +" " + b);
+console.log (a + " " + b);
 console.log (p)
 console.log (s)
 console.log (soot);
+
+console.log("Номер 3");
+
+//console.log ("введите значение: ");
+t = prompt("Номер 3; Введите значение: ");
+console.log(t+"°C соответствует " + ((9/5)*t+32)+"°F");
+console.log(t+"°F соответствует " + ((5/9)*(t-32))+"°C");
+
+console.log("Номер 4");
+
+year = prompt("Номер 4; Введите год: ");
+year_v = year%4;
+if(year_v > 1)
+{
+alert("год обычный");
+}
+else
+{
+    year_s = year%100;
+    if(year_s>0)
+    {
+        alert("год високосный")
+    }
+    else
+    {
+        alert("Это столетие!")
+    }
+}
