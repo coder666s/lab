@@ -1,6 +1,6 @@
 
 //номер 1
-
+/*
 console.log("Номер 1\n");
 
 console.log("Предположение: Number");
@@ -81,3 +81,90 @@ else
         alert("Это столетие!")
     }
 }
+
+console.log("Номер 5");
+
+number_51 = prompt("Номер 5; Введите число 1: ");
+number_52 = prompt("Номер 5; Введите число 2: ");
+
+
+sum = parseInt (number_51) + parseInt (number_52);
+
+if(number_51 == 10 || number_52 == 10)
+{
+    alert("Одно из числел равно 10!");
+}
+else if(sum == 10)
+{
+    alert("Сумма чисел равно 10!");
+}
+else
+{
+    alert("Нет чисел равных 10 и сумма этих чисел не равна 10!");
+    console.log(sum);
+}
+
+console.log("Номер 6");
+
+lamb = prompt("Введите любое натуральное число: ");
+sum_lamb = "";
+for(i = 1; i<=lamb;i++)
+{
+    sum_lamb += i + " овечка... "
+}
+console.log(sum_lamb);
+
+console.log("Номер 7");
+
+for(i = 0; i<=15; i++)
+{
+    prov = i%2;
+
+    if (prov ==0)
+    {
+        console.log(i+" Четное");
+    }
+    else
+    {
+        console.log(i+" Нечетное");
+    }
+}
+
+console.log("Номер 8");
+
+for(i = 0; i<=16; i++)
+{
+    prov = i%2;
+
+    if (prov == 0)
+    {
+        console.log("#".repeat(i));
+    }
+    else
+    {
+        console.log("*".repeat(i));
+    }
+}
+*/
+console.log("Номер 9");
+ 
+number_91 = prompt("Номер 9; Введите число 1: ");
+number_92 = prompt("Номер 9; Введите число 2: ");
+number_93 = prompt("Номер 9; Введите число 3: ");
+number_94 = 0;
+
+if(number_91>number_92 || number_91>number_93)
+{
+    number_94 = number_93;
+    number_93 = number_91;
+    number_91 = number_94
+    
+}
+if(number_91>number_92)
+{
+    number_94 = number_92;
+    number_92 = number_91;
+    number_91 = number_94;
+    
+}
+console.log(number_91 + " " + number_92 + " " + number_93 );
