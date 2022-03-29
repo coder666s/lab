@@ -1,7 +1,5 @@
 
-//номер 1
-/*
-console.log("Номер 1\n");
+console.log("Номер 1");
 
 console.log("Предположение: Number");
 console.log("Фактический (typeof(9)): " + typeof(9)+"\n");
@@ -42,7 +40,7 @@ console.log("Фактический (\"Сэм\" - 5): " + ("Сэм" - 5)+"\n");
 console.log("Предположение: Object");
 console.log("Фактический (99 * \"шары\"): " + (99 * "шары")+"\n");
 
-console.log ("Номер 2\n");
+console.log ("Номер 2");
 
 a = 2;
 b = 3;
@@ -145,26 +143,72 @@ for(i = 0; i<=16; i++)
         console.log("*".repeat(i));
     }
 }
-*/
+
 console.log("Номер 9");
  
-number_91 = prompt("Номер 9; Введите число 1: ");
-number_92 = prompt("Номер 9; Введите число 2: ");
-number_93 = prompt("Номер 9; Введите число 3: ");
-number_94 = 0;
+number_91 = parseInt(prompt("Номер 9; Введите число 1: "));
+number_92 = parseInt(prompt("Номер 9; Введите число 2: "));
+number_93 = parseInt(prompt("Номер 9; Введите число 3: "));
 
-if(number_91>number_92 || number_91>number_93)
+if(number_91>number_92 && number_91> number_93)
 {
-    number_94 = number_93;
-    number_93 = number_91;
-    number_91 = number_94
-    
+    if (number_92>number_93)
+    {
+        console.log(number_93 + " " + number_92 + " " + number_91);
+    }
+    else
+    {
+        console.log(number_92 + " " + number_93 + " " + number_91);
+    }
 }
-if(number_91>number_92)
+if(number_92>number_91 && number_92> number_93)
 {
-    number_94 = number_92;
-    number_92 = number_91;
-    number_91 = number_94;
-    
+    if (number_91>number_93)
+    {
+        console.log(number_93 + " " + number_91 + " " + number_92);
+    }
+    else
+    {
+        console.log(number_91 + " " + number_93 + " " + number_92);
+    }
 }
-console.log(number_91 + " " + number_92 + " " + number_93 );
+if(number_93>number_91 && number_93> number_92)
+{
+    if (number_91>number_92)
+    {
+        console.log(number_92 + " " + number_91 + " " + number_93);
+    }
+    else
+    {
+        console.log(number_91 + " " + number_92 + " " + number_93);
+    }
+}
+
+console.log("Номер 10");
+
+number_101 = parseInt(prompt("Номер 10; Введите число 1: "));
+number_102 = parseInt(prompt("Номер 10; Введите число 2: "));
+number_103 = parseInt(prompt("Номер 10; Введите число 3: "));
+number_104 = parseInt(prompt("Номер 10; Введите число 4: "));
+number_105 = parseInt(prompt("Номер 10; Введите число 5: "));
+
+if(number_101>number_102 && number_101>number_103 && number_101>number_104 && number_101>number_105)
+{
+    console.log (number_101);
+}
+if(number_102>number_101 && number_102>number_103 && number_102>number_104 && number_102>number_105)
+{
+    console.log (number_102);
+}
+if(number_103>number_102 && number_103>number_101 && number_103>number_104 && number_103>number_105)
+{
+    console.log (number_103);
+}
+if(number_104>number_102 && number_104>number_103 && number_104>number_101 && number_104>number_105)
+{
+    console.log (number_104);
+}
+if(number_105>number_102 && number_105>number_103 && number_105>number_104 && number_105>number_101)
+{
+    console.log (number_105);
+}
