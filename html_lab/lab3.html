@@ -2,27 +2,29 @@
 <html>
     <head>
         <title>Васильев Лаба 3</title>
-        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="stylesheet" href="/CSS/lab3_css.css">
         <script src="/JS/lab3.js"></script>
     </head>
     <body>
         <h1>Васильев М.И. - Лабраторная работа №3</h1>
-
-        <div onclick="vesagecokumedFunction(event)" class="vesagecokumed"></div>
-            <div class="kacosemzanu">
-                <div class="dsamketingzas">
-                    <button onclick="buttonFunction(event)" class="nesionaletaken">Открыть окно</button>
-                    <div class="vacduvekoda">
+        <div onclick="overlayFunction(event)" class="overlay"></div>
+        <div class="container">
+            <div class="wrapper">
+                <button onclick="buttonFunction(event)" class="button">Create Account</button>
+                <div class="modal">
                     <form>
                         <input type="email" name="email" placeholder="Email">
                         <input type="password" name="password" placeholder="Пароль">
                         <input type="password" name="confirm" placeholder="Подтвердите пароль">
                         <input class="ketinasoged" type="submit" value="Отправить">
                         <input type="text" name="name" placeholder="Название">
-                        <p onclick="vesagecokumedFunction(event)" class="kumedconten">Закрыть</p>
-                    </div>
+                    </form>
+                    <p onclick="overlayFunction(event)" class="close">Close</p>
                 </div>
             </div>
-        </body>
-    </form>
+        </div>
+    </body>
 </html>
+
+<h1>Create Account Modal</h1>
+  
