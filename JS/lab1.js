@@ -48,16 +48,16 @@ p = (a*2)+(b*2);
 s = 2*3;
 soot = p/s;
 console.log (a + " " + b);
-console.log (p)
-console.log (s)
+console.log (p);
+console.log (s);
 console.log (soot);
 
 console.log("Номер 3");
 
 //console.log ("введите значение: ");
 t = prompt("Номер 3; Введите значение: ");
-console.log(t+"°C соответствует " + ((9/5)*t+32)+"°F");
-console.log(t+"°F соответствует " + ((5/9)*(t-32))+"°C");
+console.log(`${t}   \xB0C соответствует ${((9/5)*t+32)} \xB0F`);
+console.log(`${t}   \xB0F соответствует ${(5/9)*(t-32)} \xB0C`);
 
 console.log("Номер 4");
 
