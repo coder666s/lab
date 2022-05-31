@@ -6,25 +6,28 @@
         <script src="/JS/lab3.js"></script>
     </head>
     <body>
-        <h1>Васильев М.И. - Лабраторная работа №3</h1>
-        <div onclick="overlayFunction(event)" class="overlay"></div>
-        <div class="container">
-            <div class="wrapper">
-                <button onclick="buttonFunction(event)" class="button">Create Account</button>
-                <div class="modal">
-                    <form>
-                        <input type="email" name="email" placeholder="Email">
-                        <input type="password" name="password" placeholder="Пароль">
-                        <input type="password" name="confirm" placeholder="Подтвердите пароль">
-                        <input class="ketinasoged" type="submit" value="Отправить">
-                        <input type="text" name="name" placeholder="Название">
-                    </form>
-                    <p onclick="overlayFunction(event)" class="close">Close</p>
-                </div>
-            </div>
-        </div>
+        <header>
+            <h1>Васильев М.И. - Лабраторная работа №3</h1>
+            <button class="open-button" onclick="openForm()">Открыть форму</button>
+        </header>
+        <main class="form-popup" id="myForm">
+            <form action="#" class="form-container">
+                <h1>Форма</h1>
+                <label>Имя<span>*</span>: <input type="name" name="name" placeholder="введите имя" required></label>
+                <label>Телефон:<span>*</span>: <input type="tel" name="phone" placeholder="введите телефон" required></label>
+                <label>Дополнительные ингридиенты для пиццы:
+                    <select>
+                        <option value="zero">Не выбрано</option>
+                        <option value="1">Ананас</option>
+                        <option value="2">Пеперони</option>
+                        <option value="3">Курица</option>
+                        <option value="4">Грибы</option>
+                    </select>
+                </label>
+                <button type="submit" class="btn" onclick="submit()">Отправить</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+            </form>
+        </main>
     </body>
 </html>
-
-<h1>Create Account Modal</h1>
   

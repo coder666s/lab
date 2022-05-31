@@ -2,26 +2,41 @@
 console.log("Номер 1");
 
 number_1 = prompt("Номер 1, Введите число для модуля: ");
+
+function absValue (number_1) {
 if(number_1<0)
 {
- number_1 = parseInt(-number_1);
- console.log("Модуль = "+number_1);
+ return -number_1;
 }
 else
 {
-    console.log("Модуль = "+number_1);
+    return number_1;
 }
+}
+console.log(absValue(number_1));
 
 console.log("Номер 2");
 
 word = prompt("Введите слово: ");
-console.log(word === word.split('').reverse().join(''));
 
+function isPalindrom(word){
+
+    var len = word.length;
+    var mid = Math.floor(len/2);
+
+    for ( var i = 0; i < mid; i++ ) {
+        if (word[i] !== word[len - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isPalindrom(word));
 
 console.log("Номер 3");
 
-matrix1 = [[12,20],[11,25]];
-matrix2 = [[11,43],[21,52]];
+function matrix(matrix1, matrix2){
 matrix_answ = [];
 s = "";
 if(matrix1.length == matrix2.length)
@@ -42,7 +57,8 @@ if(matrix1.length == matrix2.length)
 else {
   console.log("Сложение матриц невозможно");
 }
-
+}
+console.log(matrix([[12,20],[11,25]], [[12,20],[11,25]]))
 
 console.log("Номер 4");
 
