@@ -48,16 +48,12 @@
     
             modalButtons.addEventListener("click", (e) => {
                 event.preventDefault(); //предотвращение дефолтных событий браузера
-                modalElem.classList.add('active'); //акьтвирем окно
+                modalElem.classList.add('active'); //активирем окно
                 overlay.classList.add('active'); //активируем подложку
                 body.classList.add('active');
     
     
             });
-    
-    
-    
-            //let pole = docement.querySelectorAll('.pole')
     
             info1.addEventListener("input", (e) => {
     
@@ -78,10 +74,7 @@
                     info1.setCustomValidity("");
                     info1.classList.remove('active');
                 }
-    
-    
             });
-    
     
             info2.addEventListener("input", (e) => {
     
@@ -105,11 +98,6 @@
     
     
             });
-    
-    
-    
-    
-    
     
             push.addEventListener("click", (e) => {
                 event.preventDefault();
@@ -155,10 +143,7 @@
     
             });
     
-    
-    
-        </script>
-       
+        </script>   
     </body>
 </html>
   
