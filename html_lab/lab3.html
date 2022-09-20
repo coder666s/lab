@@ -1,33 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <title>Васильев Лаба 3</title>
         <link rel="stylesheet" href="/CSS/lab3_css.css">
-        <script src="/JS/lab3.js"></script>
     </head>
     <body>
         <header>
             <h1>Васильев М.И. - Лабраторная работа №3</h1>
-            <button class="open-button" onclick="openForm()">Открыть форму</button>
+            <br>
+            <a href="/index.html">Главная старница</a>
         </header>
-        <main class="form-popup" id="myForm">
-            <form action="#" class="form-container">
-                <h1>Форма</h1>
-                <label>Имя<span>*</span>: <input type="name" name="name" placeholder="введите имя" required></label>
-                <label>Телефон:<span>*</span>: <input type="tel" name="phone" placeholder="введите телефон" required></label>
-                <label>Дополнительные ингридиенты для пиццы:
-                    <select>
-                        <option value="zero">Не выбрано</option>
-                        <option value="1">Ананас</option>
-                        <option value="2">Пеперони</option>
-                        <option value="3">Курица</option>
-                        <option value="4">Грибы</option>
-                    </select>
-                </label>
-                <button type="submit" class="btn" onclick="submit()">Отправить</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+        <button class="but js-open-modal"> Открыть модальное окно </button>
+        <div class="modal">
+            <form id="forma">
+                <p>Имя Преподователя</p>
+                <input class="pole" id="info1" type="text" name="nameTeacher" required>
+                <p>Название Дисциплины</p>
+                <input class="pole" id="info2" type="text" name="nameLesson" required>
+                <fieldset >
+                    <legend>Тип занятия</legend>
+                <label> <input type="radio" name="lesson" value="Лекция">
+                Лекция</label>
+                <label> <input type="radio" name="lesson" value="Лабораторная">
+                Лабораторная</label>
+                <label> <input type="radio" name="lesson" value="Практика">
+                Практическая</label>
+               </fieldset>
+                <p><button class="js-modal-close">Закрыть</button></p>
+                <p><input class="push" type="submit"></p>
+    
+                
             </form>
-        </main>
+        </div>
+    
+        <div class="overlay overlay-modal"></div>
+        <script>
+
+            let modalButtons = document.querySelector('.js-open-modal'),
+                overlay = document.querySelector('.overlay-modal'),
+                closeButtons = document.querySelector('.js-modal-close');
+            let modalElem = document.querySelector('.modal');
+            let push = document.querySelector('.push'),
+                info1 = document.getElementById('info1'),
+                info2 = document.getElementById('info2'),
+                body = document.querySelector('body');
+                
+    
+            modalButtons.addEventListener("click", (e) => {
+                event.preventDefault(); //предотвращение дефолтных событий браузера
+                modalElem.classList.add('active'); //акьтвирем окно
+                overlay.classList.add('active'); //активируем подложку
+                body.classList.add('active');
+    
+    
+            });
+    
+    
+    
+            //let pole = docement.querySelectorAll('.pole')
+    
+            info1.addEventListener("input", (e) => {
+    
+                if (info1.validity.typeMismatch) {
+                    info1.setCustomValidity("Неправельный тип данных!");
+                    info1.classList.add('active');
+                }
+                else {
+                    info1.setCustomValidity("");
+                    info1.classList.remove('active');
+                }
+    
+                if (info1.validity.valueMissing) {
+                    info1.setCustomValidity("Заполните пустые поля!");
+                    info1.classList.add('active');
+                }
+                else {
+                    info1.setCustomValidity("");
+                    info1.classList.remove('active');
+                }
+    
+    
+            });
+    
+    
+            info2.addEventListener("input", (e) => {
+    
+                if (info2.validity.typeMismatch) {
+                    info2.setCustomValidity("Неправельный тип данных!");
+                    info2.classList.add('active');
+                }
+                else {
+                    info2.setCustomValidity("");
+                    info2.classList.remove('active');
+                }
+    
+                if (info2.validity.valueMissing) {
+                    info2.setCustomValidity("Заполните пустые поля!");
+                    info2.classList.add('active');
+                }
+                else {
+                    info2.setCustomValidity("");
+                    info2.classList.remove('active');
+                }
+    
+    
+            });
+    
+    
+    
+    
+    
+    
+            push.addEventListener("click", (e) => {
+                event.preventDefault();
+               if(document.forms[0].reportValidity())
+                {
+    
+                    let get1 = document.forms[0].elements['nameTeacher'].value;
+                    let get2 = document.forms[0].elements['nameLesson'].value;
+                    let get3 = document.forms[0].elements['lesson'].value;
+                    
+                    let data ={
+                        nameTeacher: get1,
+                        nameLesson: get2,
+                        lesson:get3
+                    };
+    
+    
+                    console.table(data);
+    
+                    modalElem.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('active');
+    
+                    
+                }
+    
+            });
+    
+            closeButtons.addEventListener("click", (e) => {
+                event.preventDefault();
+                modalElem.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('active');
+    
+            });
+    
+            document.addEventListener("click", (e) => {
+                if (e.target === overlay) {
+                    modalElem.classList.remove('active');
+                    overlay.classList.remove('active');
+                    body.classList.remove('active');
+                }
+    
+            });
+    
+    
+    
+        </script>
+       
     </body>
 </html>
   
