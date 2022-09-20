@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Васильев Лаба 4</title>
+</head>
+
+<body>
+    <header>
+        <h1>Васильев М.И. - Лабраторная работа №4
+        </h1>
+        <br>
+        <a href="/index.html">Главная старница</a>
+    </header>
+    <button id="APIF">Послать запрос</button>
+
+    <script>
+
+        document.getElementById("APIF").onclick = function () {
+            fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
+            .then((res) => { return res.json(); })
+            .then((data) => {
+                console.log(data);
+                console.log(data.length);
+                document.write("<p>Ответы</p>")
+                for (item of data)
+                    document.write("<p style=\"border: 1px solid black; padding: 5px;\">" + item.commit.author.name + ": " + item.commit.author.email + "</p>")
+            })
+            .catch(() => { alert("Ошибка!"); })
+            .finally(() => { alert("Ответ получен!"); });
+        }
+
+    </script>
+
+
+</body>
+
+</html>
